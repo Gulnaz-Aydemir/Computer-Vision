@@ -64,7 +64,7 @@ Histogram eşitleme algoritması, Kümülatif Dağılım Fonksiyonu (CDF) `hist.
 ---
 
 ## 👤 Proje Sahibi
-Yapay Zeka Mühendisliği Öğrencisi Gülnaz Aydemir
+Yapay Zeka Mühendisliği Öğrencisi 
 
-* **[Buraya Adın Soyadın Gelecek]**
+* **Gülnaz Aydemir**
 * Ostim Teknik Üniversitesi
