@@ -1,6 +1,6 @@
 # 📸 Nokta İşlemleri ve Histogram
 
- Proje, temel görüntü işleme algoritmalarını `cv2.calcHist()` ve `cv2.equalizeHist()` gibi hazır kütüphane fonksiyonları **kullanılmadan**, sıfırdan **NumPy** kütüphanesi ile implemente etmeye odaklanmaktadır.
+ Proje, temel görüntü işleme algoritmalarını `cv2.calcHist()` ve `cv2.equalizeHist()` gibi hazır kütüphane fonksiyonları kullanılmadan, sıfırdan **NumPy** kütüphanesi ile implemente etmeye odaklanmaktadır.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![NumPy](https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white)
