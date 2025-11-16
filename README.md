@@ -1,19 +1,70 @@
-# Bilgisayarla Görü Ödevi 3: Nokta İşlemleri ve Histogram
+# 📸 Nokta İşlemleri ve Histogram
 
-Bu proje, "Bilgisayarla Görü" dersinin 3. ödevi kapsamında hazırlanmıştır. Proje, Python kullanarak temel görüntü işleme tekniklerini uygular.
+ Proje, temel görüntü işleme algoritmalarını `cv2.calcHist()` ve `cv2.equalizeHist()` gibi hazır kütüphane fonksiyonları **kullanılmadan**, sıfırdan **NumPy** kütüphanesi ile implemente etmeye odaklanmaktadır.
 
-Uygulanan teknikler şunlardır:
-* **Soru 1:** Parlaklık, Kontrast, Negatif Alma ve Eşikleme gibi temel nokta işlemleri.
-* **Soru 2:** Görüntünün histogramının manuel olarak (sıfırdan) hesaplanması ve istatistiklerinin (Ortalama, Standart Sapma, Entropi) çıkarılması.
-* **Soru 3:** Manuel Kontrast Germe (Contrast Stretching) implementasyonu.
-* **Soru 4:** Manuel Histogram Eşitleme (Histogram Equalization) implementasyonu.
-* **Soru 5:** Gamma Düzeltmesi uygulaması ve analizi.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=matplotlib&logoColor=blue)
 
-Proje, `cv2.calcHist()` veya `cv2.equalizeHist()` gibi hazır fonksiyonları kullanmadan, ödev gereksinimlerine uygun olarak NumPy kütüphanesi ile "sıfırdan implemente" edilmiştir.
+---
 
-## Gereksinimler
+## 🎯 Uygulanan Teknikler ve Rapor Görünümü
 
-Projenin çalıştırılması için aşağıdaki Python kütüphanelerinin yüklü olması gerekmektedir:
+Bu projede 5 ana görüntü işleme tekniği kodlanmış ve sonuçları aşağıda "rapor" formatında sunulmuştur.
 
-```bash
-pip install numpy matplotlib opencv-python pillow
+### 1. Orijinal Görüntü
+Tüm işlemler, "Lena" test görüntüsünün 512x512 piksel gri tonlamalı versiyonu üzerinde gerçekleştirilmiştir.
+
+![Orijinal Görüntü](Cikti_0_Orijinal.png)
+
+### 2. Soru 1: Temel Nokta İşlemleri
+Parlaklık, kontrast, negatif alma ve eşikleme işlemleri uygulanmıştır. Tüm taşma (overflow) kontrolleri `np.clip` ile sağlanmıştır.
+
+![Soru 1 Çıktısı](Cikti_1_Nokta_Islemleri.png)
+
+### 3. Soru 2: Histogram Analizi
+Görüntünün histogramı `np.bincount` ile manuel olarak hesaplanmıştır.
+* **Ortalama:** 132.43
+* **Standart Sapma:** 44.90
+* **Entropi:** 6.97
+
+![Soru 2 Çıktısı](Cikti_2_Histogram.png)
+
+### 4. Soru 3: Kontrast Germe (Contrast Stretching)
+`output = ((input - min) / (max - min)) * 255` formülü sıfırdan uygulanarak görüntünün dinamik aralığı genişletilmiştir.
+
+![Soru 3 Çıktısı](Cikti_3_Kontrast_Germe.png)
+
+### 5. Soru 4: Histogram Eşitleme (Histogram Equalization)
+Histogram eşitleme algoritması, Kümülatif Dağılım Fonksiyonu (CDF) `hist.cumsum()` kullanılarak **manuel** olarak implemente edilmiştir.
+
+![Soru 4 Çıktısı](Cikti_4_Histogram_Esitleme.png)
+
+### 6. Soru 5: Gamma Düzeltmesi
+`output = 255 * (input / 255)^gamma` formülü, ödevde istenen (0.5, 1.5, 2.0, 2.5) gamma değerleri için uygulanmıştır.
+
+![Soru 5 Çıktısı](Cikti_5_Gamma.png)
+
+---
+
+## 🚀 Kurulum ve Çalıştırma
+
+1.  Gerekli kütüphanelerin yüklü olduğundan emin olun:
+    ```bash
+    pip install numpy matplotlib opencv-python pillow
+    ```
+2.  `test_goruntu.png` dosyasının kod ile aynı klasörde olduğundan emin olun.
+3.  Aşağıdaki komut ile script'i çalıştırın:
+    ```bash
+    python odev3.py
+    ```
+4.  Script, tüm görsel çıktıları `Cikti_*.png` olarak klasörün içine kaydedecektir.
+
+---
+
+## 👤 Proje Sahibi
+Yapay Zeka Mühendisliği Öğrencisi Gülnaz Aydemir
+
+* **[Buraya Adın Soyadın Gelecek]**
+* Ostim Teknik Üniversitesi
