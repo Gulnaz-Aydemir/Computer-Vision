@@ -18,12 +18,12 @@ Tüm işlemler, "Lena" test görüntüsünün 512x512 piksel gri tonlamalı vers
 
 ![Orijinal Görüntü](Cikti_0_Orijinal.png)
 
-### 2. Soru 1: Temel Nokta İşlemleri
+### 2. Temel Nokta İşlemleri
 Parlaklık, kontrast, negatif alma ve eşikleme işlemleri uygulanmıştır. Tüm taşma (overflow) kontrolleri `np.clip` ile sağlanmıştır.
 
 ![Soru 1 Çıktısı](Cikti_1_Nokta_Islemleri.png)
 
-### 3. Soru 2: Histogram Analizi
+### 3. Histogram Analizi
 Görüntünün histogramı `np.bincount` ile manuel olarak hesaplanmıştır.
 * **Ortalama:** 132.43
 * **Standart Sapma:** 44.90
@@ -31,17 +31,17 @@ Görüntünün histogramı `np.bincount` ile manuel olarak hesaplanmıştır.
 
 ![Soru 2 Çıktısı](Cikti_2_Histogram.png)
 
-### 4. Soru 3: Kontrast Germe (Contrast Stretching)
+### 4. Kontrast Germe (Contrast Stretching)
 `output = ((input - min) / (max - min)) * 255` formülü sıfırdan uygulanarak görüntünün dinamik aralığı genişletilmiştir.
 
 ![Soru 3 Çıktısı](Cikti_3_Kontrast_Germe.png)
 
-### 5. Soru 4: Histogram Eşitleme (Histogram Equalization)
+### 5. Histogram Eşitleme (Histogram Equalization)
 Histogram eşitleme algoritması, Kümülatif Dağılım Fonksiyonu (CDF) `hist.cumsum()` kullanılarak **manuel** olarak implemente edilmiştir.
 
 ![Soru 4 Çıktısı](Cikti_4_Histogram_Esitleme.png)
 
-### 6. Soru 5: Gamma Düzeltmesi
+### 6. Gamma Düzeltmesi
 `output = 255 * (input / 255)^gamma` formülü, ödevde istenen (0.5, 1.5, 2.0, 2.5) gamma değerleri için uygulanmıştır.
 
 ![Soru 5 Çıktısı](Cikti_5_Gamma.png)
